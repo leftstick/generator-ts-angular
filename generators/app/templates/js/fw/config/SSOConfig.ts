@@ -6,7 +6,7 @@
  *
  */
 'use strict';
-import ConfiguratorBase from '../lib/ConfiguratorBase';
+import ConfiguratorBase = require('../lib/ConfiguratorBase');
 
 class Configurator extends ConfiguratorBase {
     constructor(features, app) {
@@ -25,4 +25,4 @@ class Configurator extends ConfiguratorBase {
     }
 }
 
-export default Configurator;
+export = Configurator;

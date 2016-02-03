@@ -8,8 +8,8 @@
  *
  */
 'use strict';
-import ServiceBase from '../lib/ServiceBase';
-import InternalService from './InternalService';
+import ServiceBase = require('../lib/ServiceBase');
+import InternalService = require('./InternalService');
 
 class Service extends ServiceBase {
     constructor(features, app) {
@@ -21,4 +21,4 @@ class Service extends ServiceBase {
     }
 }
 
-export default Service;
+export = Service;

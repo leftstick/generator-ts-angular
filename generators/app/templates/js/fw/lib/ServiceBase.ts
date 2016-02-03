@@ -7,7 +7,7 @@
  *
  */
 'use strict';
-import FeatureBase from './FeatureBase';
+import FeatureBase = require('./FeatureBase');
 
 class ServiceBase {
 
@@ -23,4 +23,4 @@ class ServiceBase {
     }
 }
 
-export default ServiceBase;
+export = ServiceBase;

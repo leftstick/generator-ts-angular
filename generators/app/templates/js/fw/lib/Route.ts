@@ -15,4 +15,4 @@ interface Route {
     template: string;
 }
 
-export default Route;
+export = Route;

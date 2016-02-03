@@ -6,6 +6,6 @@
  *
  */
 'use strict';
-import utils from './Utils';
+import utils = require('./Utils');
 
-export default [utils];
+export =[utils];

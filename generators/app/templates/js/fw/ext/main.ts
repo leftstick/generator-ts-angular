@@ -7,11 +7,11 @@
  */
 'use strict';
 
-import 'angular';
-import 'angular-animate';
-import 'angular-route';
+require('angular');
+require('angular-animate');
+require('angular-route');
 
-export default [
+export =[
     'ngAnimate',
     'ngRoute'
 ];

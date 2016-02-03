@@ -8,10 +8,10 @@
  *
  */
 'use strict';
-import ConfiguratorBase from '../lib/ConfiguratorBase';
-import pluck from '../lib/Pluck';
-import omit from '../lib/Omit';
-import Route from '../lib/Route';
+import ConfiguratorBase = require('../lib/ConfiguratorBase');
+import pluck = require('../lib/Pluck');
+import omit = require('../lib/Omit');
+import Route = require('../lib/Route');
 
 class Configurator extends ConfiguratorBase {
 
@@ -90,4 +90,4 @@ class Configurator extends ConfiguratorBase {
     }
 }
 
-export default Configurator;
+export = Configurator;

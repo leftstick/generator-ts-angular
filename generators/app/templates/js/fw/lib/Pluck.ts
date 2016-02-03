@@ -7,7 +7,9 @@
  */
 'use strict';
 
-import { isArray } from 'angular';
+import ng = require('angular');
+
+var {isArray} = ng;
 
 var pluck = function(arr: Array<Object>, key: string): Array<string> {
     if (!isArray(arr) || arr.length === 0) {
@@ -21,4 +23,4 @@ var pluck = function(arr: Array<Object>, key: string): Array<string> {
     });
 };
 
-export default pluck;
+export = pluck;

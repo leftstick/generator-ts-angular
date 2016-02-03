@@ -8,7 +8,9 @@
  */
 'use strict';
 
-import { isObject, isArray, isString } from 'angular';
+import ng = require('angular');
+
+var {isObject, isArray, isString} = ng;
 
 var clone = function(obj: Object) {
     if (typeof obj !== 'object' || !obj) {
@@ -43,4 +45,4 @@ var omit = function(obj: Object, keys: Array<string>): Object {
     return o;
 };
 
-export default omit;
+export = omit;

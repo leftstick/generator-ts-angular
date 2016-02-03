@@ -9,7 +9,7 @@
  */
 'use strict';
 
-import config from '../../../etc/config';
+import config = require('../../../etc/config');
 
 class InternalService {
 
@@ -45,4 +45,4 @@ class InternalService {
 
 }
 
-export default InternalService;
+export = InternalService;

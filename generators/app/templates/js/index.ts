@@ -13,6 +13,6 @@ require.ensure(['splash-screen/splash.min.css', 'splash-screen'], function(requi
 
 require.ensure(['./main'], function(require) {
 
-    var App = (<any>require('./main')).default;
+    var App = (<any>require('./main'));
     (new App()).run();
 });

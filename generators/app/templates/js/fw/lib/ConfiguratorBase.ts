@@ -7,7 +7,7 @@
  *
  */
 'use strict';
-import FeatureBase from '../lib/FeatureBase';
+import FeatureBase = require('../lib/FeatureBase');
 
 class ConfiguratorBase {
 
@@ -25,4 +25,4 @@ class ConfiguratorBase {
     }
 }
 
-export default ConfiguratorBase;
+export = ConfiguratorBase;

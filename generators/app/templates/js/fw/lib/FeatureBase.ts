@@ -7,8 +7,8 @@
  *
  */
 'use strict';
-import * as angular from 'angular';
-import Route from './Route';
+import angular = require('angular');
+import Route = require('./Route');
 
 class FeatureBase {
 
@@ -45,4 +45,4 @@ class FeatureBase {
     }
 }
 
-export default FeatureBase;
+export = FeatureBase;

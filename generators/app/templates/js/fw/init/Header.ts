@@ -7,9 +7,9 @@
  *
  */
 'use strict';
-import InitBase from '../lib/InitBase';
-import { element } from 'angular';
-import __config from '../../../etc/config';
+import InitBase = require('../lib/InitBase');
+import angular = require('angular');
+import __config = require('../../../etc/config');
 
 class Initializer extends InitBase {
 
@@ -17,11 +17,11 @@ class Initializer extends InitBase {
 
     constructor(features) {
         super(features);
-        this.head = element(document.head);
+        this.head = angular.element(document.head);
     }
 
     meta(attr): void {
-        var meta = element('<meta>');
+        var meta = angular.element('<meta>');
         meta.attr(attr);
         this.head.append(meta);
     }
@@ -48,4 +48,4 @@ class Initializer extends InitBase {
     }
 }
 
-export default Initializer;
+export = Initializer;

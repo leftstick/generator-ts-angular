@@ -6,15 +6,15 @@
  *
  */
 'use strict';
-import {module, bootstrap} from 'angular';
-import Initializers from './fw/init/main';
-import Extensions from './fw/ext/main';
-import Configurators from './fw/config/main';
-import Services from './fw/service/main';
-import Features from './features/main';
-import Splash from 'splash-screen';
+import ng = require('angular');
+import Initializers = require('./fw/init/main');
+import Extensions = require('./fw/ext/main');
+import Configurators = require('./fw/config/main');
+import Services = require('./fw/service/main');
+import Features = require('./features/main');
+import Splash = require('splash-screen');
 
-import FeatureBase from './fw/lib/FeatureBase';
+import FeatureBase = require('./fw/lib/FeatureBase');
 
 class App {
 
@@ -34,7 +34,7 @@ class App {
         this.depends = Extensions.slice(0);
 
         var featureNames = this.features
-            .filter(feature => feature.export)
+            .filter(feature => !!feature.export)
             .map(feature => feature.export);
 
         this.depends.push(...featureNames);
@@ -51,7 +51,7 @@ class App {
     createApp() {
         this.features.forEach(feature => feature.execute());
 
-        this.app = module(this.appName, this.depends);
+        this.app = ng.module(this.appName, this.depends);
     }
 
     configApp() {
@@ -78,7 +78,7 @@ class App {
     }
 
     launch() {
-        bootstrap(document, [this.appName]);
+        ng.bootstrap(document, [this.appName]);
     }
 
     run(): void {
@@ -93,4 +93,4 @@ class App {
 
 }
 
-export default App;
+export = App;

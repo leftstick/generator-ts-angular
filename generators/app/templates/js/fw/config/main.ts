@@ -8,7 +8,7 @@
  */
 'use strict';
 
-import router from './RouterConfig';
-import sso from './SSOConfig';
+import router = require('./RouterConfig');
+import sso = require('./SSOConfig');
 
-export default [router, sso];
+export =[router, sso];
