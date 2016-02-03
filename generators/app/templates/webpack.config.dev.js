@@ -13,13 +13,6 @@ module.exports = {
         chunkFilename: '[id].bundle.js',
         publicPath: 'js/'
     },
-    resolve: {
-        extensions: [
-            '',
-            '.js',
-            '.ts'
-        ]
-    },
     debug: true,
     devtool: 'source-map',
     module: {
@@ -54,9 +47,12 @@ module.exports = {
     },
     resolve: {
         root: [
-            path.resolve(__dirname),
-            path.resolve(__dirname, 'js/'),
-            path.resolve(__dirname, 'js/fw/')
+            path.resolve(__dirname)
+        ],
+        extensions: [
+            '',
+            '.js',
+            '.ts'
         ]
     },
     plugins: [

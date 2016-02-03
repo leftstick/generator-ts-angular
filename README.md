@@ -16,7 +16,8 @@ Yeoman generator for AngularJS and written in TypeScript.
 
 1. Install [yeoman](http://yeoman.io/): `npm install -g yo`
 2. Install [gulp](http://gulpjs.com/): `npm install -g gulp`
-3. Install __this__: `npm install -g generator-ts-angular`
+3. Install [tsd](http://definitelytyped.org/tsd/): `npm install -g tsd`
+4. Install __this__: `npm install -g generator-ts-angular`
 
 > prepend with `sudo` if you are running on `*nix` OS.
 
@@ -75,9 +76,10 @@ new webpack.ProvidePlugin({
 
 1. [yeoman](http://yeoman.io/)
 2. [gulp](http://gulpjs.com/)
-3. [webpack](http://webpack.github.io/)
-4. [TypeScript](http://www.typescriptlang.org)
-5. [angular](https://angularjs.org/)
+3. [tsd](http://definitelytyped.org/tsd/)
+4. [webpack](http://webpack.github.io/)
+5. [TypeScript](http://www.typescriptlang.org)
+6. [angular](https://angularjs.org/)
 
 
 ## LICENSE ##

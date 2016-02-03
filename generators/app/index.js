@@ -98,6 +98,7 @@ var gen = generators.Base.extend({
         var _ = require('lodash');
 
         self.copy(self.templatePath('etc/config.ts'), self.destinationPath('etc/config.ts'));
+        self.copy(self.templatePath('require.d.ts'), self.destinationPath('require.d.ts'));
         self.copy(self.templatePath('tsconfig.json'), self.destinationPath('tsconfig.json'));
         self.directory(self.templatePath('img'), self.destinationPath('img'));
         self.directory(self.templatePath('js'), self.destinationPath('js'), function(body) {
@@ -118,6 +119,12 @@ var gen = generators.Base.extend({
         this.npmInstall(undefined, {
             registry: this.answers.registry
         });
+        this.spawnCommand('tsd', [
+            'install',
+            'angular',
+            'angular-route',
+            'angular-animate'
+        ], {save: true, overwrite: true, resolve: true});
     },
     end: function() {
         this.log.ok('Project ' + this.answers.name + ' generated!!!');
