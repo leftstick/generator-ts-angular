@@ -7,4 +7,6 @@
  */
 'use strict';
 
-export =[];
+import todos = require('./todos/main');
+
+export =[todos];
