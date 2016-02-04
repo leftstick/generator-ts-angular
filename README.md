@@ -41,7 +41,7 @@ Run `gulp dev` to start a debug web server for current working directory.
 
 Open [http://localhost:8080/webpack-dev-server/index.html](http://localhost:8080/webpack-dev-server/index.html), and have fun.
 
-I would strongly suggest that you use [atom](https://atom.io/) with [atom-typescript](https://atom.io/packages/atom-typescript) plugin to modify the codes. That's really fantastic experience.
+** I would strongly suggest that you use [atom](https://atom.io/) with [atom-typescript](https://atom.io/packages/atom-typescript) plugin to modify the codes. That's really fantastic experience. **
 
 ## Release your app ##
 
