@@ -28,7 +28,8 @@ class TodosController {
 
     _init_() {
         this.$scope['todolist'] = this.todolist;
-        this.TodosService.getInitTodos()
+        this.TodosService
+            .getInitTodos()
             .success(data => this.todolist.push(...data));
 
         this.$scope.$watch('todolist', this.onTodosChanged.bind(this), true);
@@ -62,7 +63,7 @@ class TodosController {
     }
 
     markAll(checked: boolean) {
-        this.todolist.forEach(todo => { todo.completed = checked; });
+        this.todolist.forEach(todo => todo.completed = checked);
     }
 
     toggleFilter(e, filter) {
