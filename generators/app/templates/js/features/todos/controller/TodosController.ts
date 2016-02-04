@@ -15,9 +15,7 @@ class TodosController {
 
     todolist: Array<Todo> = [];
     statusFilter: Object = {};
-    allChecked: boolean = false;
     remainingCount: number = 0;
-    doneCount: number = 0;
     filter: string = '';
     editedTodo: Todo;
     newTodo: string = '';
@@ -38,8 +36,6 @@ class TodosController {
 
     onTodosChanged() {
         this.remainingCount = this.todolist.filter((todo) => !todo.completed).length;
-        this.doneCount = this.todolist.length - this.remainingCount;
-        this.allChecked = !this.remainingCount;
     }
 
     addTodo() {
@@ -80,9 +76,7 @@ class TodosController {
     }
 
     _destroy_() {
-        this.$scope.$on('$destroy', function() {
-            console.log('asdfsafa');
-        });
+        this.$scope.$on('$destroy', () => { });
     }
 }
 

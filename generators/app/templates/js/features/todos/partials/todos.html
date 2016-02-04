@@ -6,7 +6,7 @@
 		</form>
 	</header>
 	<section class="main" ng-if="todos.todolist.length">
-		<input class="toggle-all" type="checkbox" ng-model="todos.allChecked" ng-click="todos.markAll(todos.allChecked)">
+		<input class="toggle-all" type="checkbox" ng-checked="!todos.remainingCount" ng-click="todos.markAll(!!todos.remainingCount)">
 		<label for="toggle-all">Mark all as complete</label>
 		<ul class="todo-list">
 			<li ng-repeat="todo in todos.todolist | filter: todos.statusFilter track by $index" ng-class="{completed: todo.completed}">
@@ -36,7 +36,7 @@
 				<a ng-class="{selected: todos.filter === 'completed'}" href ng-click="todos.toggleFilter($event, 'completed')">Completed</a>
 			</li>
 		</ul>
-		<button class="clear-completed" ng-click="todos.clearDoneTodos()" ng-if="todos.doneCount">Clear completed</button>
+		<button class="clear-completed" ng-click="todos.clearDoneTodos()" ng-if="todos.todolist.length - todos.remainingCount">Clear completed</button>
 	</footer>
 </section>
 <footer class="info">

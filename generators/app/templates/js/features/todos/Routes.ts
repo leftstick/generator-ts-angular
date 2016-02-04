@@ -1,6 +1,6 @@
 /**
  *
- *  Routes module expose route information used in home feature
+ *  Routes module expose route information used in todos feature
  *
  *  @author  <%= answers.username %>
  *  @date    <%= answers.date %>

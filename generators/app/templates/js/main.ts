@@ -24,7 +24,7 @@ class App {
     app: angular.IModule;
 
     constructor() {
-        this.appName = '<%= answers.name %>';
+        this.appName = 'tss';
         Features.forEach(function(Feature) {
             this.push(new Feature());
         }, this.features = []);
@@ -41,9 +41,7 @@ class App {
     }
 
     beforeStart() {
-        Initializers.forEach(function(Initializer) {
-            (new Initializer(this.features)).execute();
-        }, this);
+        Initializers.forEach((Initializer) => (new Initializer(this.features)).execute());
 
         this.features.forEach(feature => feature.beforeStart());
     }
@@ -55,15 +53,11 @@ class App {
     }
 
     configApp() {
-        Configurators.forEach(function(Configurator) {
-            (new Configurator(this.features, this.app)).execute();
-        }, this);
+        Configurators.forEach((Configurator) => (new Configurator(this.features, this.app)).execute());
     }
 
     registerService() {
-        Services.forEach(function(Service) {
-            (new Service(this.features, this.app)).execute();
-        }, this);
+        Services.forEach((Service) => (new Service(this.features, this.app)).execute());
     }
 
     destroySplash(): void {
@@ -90,7 +84,6 @@ class App {
         this.destroySplash();
         this.launch();
     }
-
 }
 
 export = App;

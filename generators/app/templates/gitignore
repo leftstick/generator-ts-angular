@@ -13,3 +13,6 @@ npm-debug.log
 
 #npm
 node_modules/
+
+#typeings
+typings

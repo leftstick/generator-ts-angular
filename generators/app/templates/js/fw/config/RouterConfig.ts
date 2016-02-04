@@ -23,15 +23,10 @@ class Configurator extends ConfiguratorBase {
 
     routeConfig($locationProvider: angular.ILocationProvider, $routeProvider: angular.route.IRouteProvider): void {
         //config each router
-        this.routes.forEach(function(ro) {
-            $routeProvider
-                .when(ro.when, omit(ro, ['when']));
-        });
+        this.routes.forEach((ro) => $routeProvider.when(ro.when, omit(ro, ['when'])));
 
         //config default page
-        var defaultRouter = this.routes.filter(function(route) {
-            return route.isDefault;
-        })[0];
+        var defaultRouter = this.routes.filter((route) => route.isDefault)[0];
         if (defaultRouter) {
             $routeProvider.otherwise({
                 redirectTo: defaultRouter.when
@@ -52,19 +47,11 @@ class Configurator extends ConfiguratorBase {
         }
 
         this.routes = this.features
-            .filter(function(feature) {
-                return feature.routes && feature.routes.length > 0;
-            })
-            .map(function(feature) {
-                return feature.routes;
-            })
-            .reduce(function(previous, current) {
-                return previous.concat(current);
-            }, []);
+            .filter((feature) => feature.routes && feature.routes.length > 0)
+            .map((feature) => feature.routes)
+            .reduce((previous, current) => previous.concat(current), []);
 
-        var defaultRoutes = this.routes.filter(function(route) {
-            return route.isDefault;
-        });
+        var defaultRoutes = this.routes.filter((route) => route.isDefault);
 
         if (defaultRoutes.length === 0) {
             console.warn('There is no any default route set. Try setting isDefault to the route you preferred');
