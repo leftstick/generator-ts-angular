@@ -8,7 +8,7 @@
  */
 'use strict';
 
-import tpl = require('./partials/todos.html');
+var tpl = (<string>require('./partials/todos.html'));
 
 export =[
     {

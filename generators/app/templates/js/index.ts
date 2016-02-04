@@ -11,7 +11,9 @@ require.ensure(['splash-screen/splash.min.css', 'splash-screen'], function(requi
     (<any>require('splash-screen')).enable('circular');
 });
 
-require.ensure(['./main'], function(require) {
+require.ensure(['../less/main.less', './main'], function(require) {
+
+    require('../less/main.less');
 
     var App = (<any>require('./main'));
     (new App()).run();

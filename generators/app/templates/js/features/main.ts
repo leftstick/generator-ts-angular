@@ -8,5 +8,6 @@
 'use strict';
 
 import todos = require('./todos/main');
+import common = require('./common/main');
 
-export =[todos];
+export =[todos, ...common];

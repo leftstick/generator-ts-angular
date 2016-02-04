@@ -7,12 +7,17 @@
  */
 'use strict';
 
+import InternalService = require('../../../fw/service/InternalService');
+import Todo = require('../model/Todo');
+
 class TodosService {
 
     /*@ngInject*/
-    constructor($http, utils) {
-        this.$http = $http;
-        this.utils = utils;
+    constructor(public $http: angular.IHttpService, public utils: InternalService) {
+    }
+
+    getInitTodos(): angular.IHttpPromise<Array<Todo>> {
+        return this.$http.get(this.utils.getApi('/GET_initTask.json'));
     }
 
 }

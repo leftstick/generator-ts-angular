@@ -15,7 +15,7 @@ class FeatureBase {
     export: string;
     mod: angular.IModule;
 
-    controller: (Function) => any;
+    controller: (controllerName: string, Function) => any;
     factory: (factoryName: string, Function) => any;
     service: (serviceName: string, Function) => any;
     directive: (directiveName: string, Function) => any;
