@@ -18,7 +18,7 @@
   "formatCodeOptions": {
     "indentSize": 4,
     "tabSize": 4,
-    "newLineCharacter": "\r\n",
+    "newLineCharacter": "\n",
     "convertTabsToSpaces": true,
     "insertSpaceAfterCommaDelimiter": true,
     "insertSpaceAfterSemicolonInForStatements": true,
