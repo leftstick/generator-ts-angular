@@ -27,7 +27,7 @@ Yeoman generator for AngularJS and written in TypeScript.
 
 > Answer questions as following demonstrated
 
-![](https://raw.githubusercontent.com/leftstick/generator-ts-angular/master/docs/img/questions.png)
+![](./docs/img/questions.png)
 
 And then, the [TypeScript](http://www.typescriptlang.org) based project generated.
 
@@ -42,6 +42,10 @@ Run `gulp dev` to start a debug web server for current working directory.
 Open [http://localhost:8080/webpack-dev-server/index.html](http://localhost:8080/webpack-dev-server/index.html), and have fun.
 
 **I would strongly suggest that you use [atom](https://atom.io/) with [atom-typescript](https://atom.io/packages/atom-typescript) plugin to modify the codes. That's really fantastic experience.**
+
+![](./docs/img/ide-hint01.png)
+![](./docs/img/ide-hint02.png)
+![](./docs/img/ide-hint03.png)
 
 ## Release your app ##
 
@@ -81,6 +85,7 @@ new webpack.ProvidePlugin({
 4. [webpack](http://webpack.github.io/)
 5. [TypeScript](http://www.typescriptlang.org)
 6. [angular](https://angularjs.org/)
+7. [ng-annotate](https://github.com/olov/ng-annotate)
 
 
 ## LICENSE ##
