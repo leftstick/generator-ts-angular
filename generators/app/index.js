@@ -123,8 +123,11 @@ var gen = generators.Base.extend({
             'install',
             'angular',
             'angular-route',
-            'angular-animate'
-        ], {save: true, overwrite: true, resolve: true});
+            'angular-animate',
+            '--save',
+            '--overwrite',
+            '--resolve'
+        ]);
     },
     end: function() {
         this.log.ok('Project ' + this.answers.name + ' generated!!!');
