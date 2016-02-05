@@ -43,8 +43,13 @@ Open [http://localhost:8080/webpack-dev-server/index.html](http://localhost:8080
 
 **I would strongly suggest that you use [atom](https://atom.io/) with [atom-typescript](https://atom.io/packages/atom-typescript) plugin to modify the codes. That's really fantastic experience.**
 
+#### Autocomplete ####
 ![](./docs/img/ide-hint01.png)
+
+#### Live error analysis ####
 ![](./docs/img/ide-hint02.png)
+
+#### Generics ####
 ![](./docs/img/ide-hint03.png)
 
 ## Release your app ##
