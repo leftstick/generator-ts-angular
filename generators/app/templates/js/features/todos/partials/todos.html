@@ -23,7 +23,7 @@
 	</section>
 	<footer class="footer" ng-if="todos.todolist.length">
 		<span class="todo-count"><strong>{{ todos.remainingCount }}</strong>
-			<ng-pluralize count="todos.remainingCount" when="{ one: 'item left', other: 'items left' }"></ng-pluralize>
+			<ng-pluralize count="todos.remainingCount" when="{ '0': 'item left', one: 'item left', other: 'items left' }"></ng-pluralize>
 		</span>
 		<ul class="filters">
 			<li>
