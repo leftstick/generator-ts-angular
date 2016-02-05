@@ -72,7 +72,7 @@ class App {
     }
 
     launch() {
-        ng.bootstrap(document, [this.appName]);
+        ng.bootstrap(document, [this.appName], { strictDi: true });
     }
 
     run(): void {
