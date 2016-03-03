@@ -6,25 +6,24 @@ var webpack = require('webpack');
 var del = require('del');
 
 gulp.task('clean', function() {
-    return del(['./build/**/*']);;
+    return del(['./build/**/*']);
 });
 
 gulp.task('copy', ['clean'], function() {
-    return gulp.src(['img/*', 'mock/*'], {'base': '.'})
+    return gulp.src(['img/*', 'mock/*'], {base: '.'})
         .pipe(gulp.dest('build/'));
 });
 
 gulp.task('release', ['copy'], function(callback) {
-    var path = require('path');
     var replace = require('gulp-replace');
     var config = require('./webpack.config.prod');
 
     webpack(config, function(err, stats) {
         if (err) {
-            throw new gutil.PluginError('webpack', err);
+            return callback(err);
         }
         gutil.log('[webpack]', stats.toString());
-        gulp.src(['index.html'], {'base': '.'})
+        gulp.src(['index.html'], {base: '.'})
             .pipe(replace('common.bundle.js', stats.hash + '.common.bundle.js'))
             .pipe(replace('index.bundle.js', stats.hash + '.index.bundle.js'))
             .pipe(gulp.dest('build/'))
@@ -42,8 +41,9 @@ gulp.task('dev', function(callback) {
         publicPath: '/js/'
     }).listen(8080, 'localhost', function(err) {
         if (err) {
-            throw new gutil.PluginError('webpack-dev-server', err);
+            return callback(err);
         }
+
         // Server listening
         gutil.log('[webpack-dev-server]', 'http://localhost:8080/webpack-dev-server/index.html');
     });
