@@ -107,8 +107,6 @@ var gen = generators.Base.extend({
                 interpolate: /<%=([\s\S]+?)%>/g
             })(self.obj);
         });
-        self.directory(self.templatePath('mock'), self.destinationPath('mock'));
-        self.fs.copy(self.templatePath('eslintrc'), self.destinationPath('.eslintrc'));
         self.fs.copy(self.templatePath('gitignore'), self.destinationPath('.gitignore'));
         self.fs.copy(self.templatePath('index.html_vm'), self.destinationPath('index.html_vm'));
         self.fs.copyTpl(self.templatePath('package.json_vm'), self.destinationPath('package.json'), self.obj);

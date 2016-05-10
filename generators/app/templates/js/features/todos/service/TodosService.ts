@@ -13,13 +13,29 @@ import Todo from '../model/Todo';
 class TodosService {
 
     /*@ngInject*/
-    constructor(public $http: angular.IHttpService, public utils: InternalService) {
+    constructor(public $q: angular.IQService) {
     }
 
-    getInitTodos(): angular.IHttpPromise<Array<Todo>> {
-        return this.$http.get(this.utils.getApi('/GET_initTask.json'));
+    getInitTodos(): angular.IPromise<Array<Todo>> {
+        return this.$q.resolve([
+            {
+                title: 'Learn AngularJS',
+                completed: true
+            },
+            {
+                title: 'Learn TypeScript',
+                completed: false
+            },
+            {
+                title: 'Learn gulp',
+                completed: true
+            },
+            {
+                title: 'Learn webpack',
+                completed: false
+            }
+        ]);
     }
-
 }
 
 export default TodosService;

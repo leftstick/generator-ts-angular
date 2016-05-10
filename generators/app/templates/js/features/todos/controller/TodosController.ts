@@ -29,7 +29,7 @@ class TodosController {
         this.$scope['todolist'] = this.todolist;
         this.TodosService
             .getInitTodos()
-            .success(data => this.todolist.push(...data));
+            .then(data => this.todolist.push(...data));
 
         this.$scope.$watch('todolist', this.onTodosChanged.bind(this), true);
     }

@@ -12,7 +12,7 @@ import Extensions from './fw/ext/main';
 import Configurators from './fw/config/main';
 import Services from './fw/service/main';
 import Features from './features/main';
-import Splash from 'splash-screen';
+var Splash = <any>require('splash-screen');
 
 import FeatureBase from './fw/lib/FeatureBase';
 
