@@ -6,9 +6,8 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import router = require('./RouterConfig');
-import sso = require('./SSOConfig');
+import router from './RouterConfig';
+import sso from './SSOConfig';
 
-export =[router, sso];
+export default [router, sso];

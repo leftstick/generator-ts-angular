@@ -5,9 +5,8 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import todos = require('./todos/main');
-import common = require('./common/main');
+import todos from './todos/main';
+import common from './common/main';
 
-export =[todos, ...common];
+export default [todos, ...common];

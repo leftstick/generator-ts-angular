@@ -5,7 +5,7 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-import utils = require('./Utils');
 
-export =[utils];
+import utils from './Utils';
+
+export default [utils];

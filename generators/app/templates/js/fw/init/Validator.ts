@@ -6,9 +6,9 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-import InitBase = require('../lib/InitBase');
-import pluck = require('../lib/Pluck');
+
+import InitBase from '../lib/InitBase';
+import pluck from '../lib/Pluck';
 
 class Initializer extends InitBase {
     constructor(features) {
@@ -30,4 +30,4 @@ class Initializer extends InitBase {
     }
 }
 
-export = Initializer;
+export default Initializer;

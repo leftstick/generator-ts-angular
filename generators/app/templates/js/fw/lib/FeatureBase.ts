@@ -6,9 +6,9 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-import angular = require('angular');
-import Route = require('./Route');
+
+import * as angular from 'angular';
+import Route from './Route';
 
 class FeatureBase {
 
@@ -45,4 +45,4 @@ class FeatureBase {
     }
 }
 
-export = FeatureBase;
+export default FeatureBase;

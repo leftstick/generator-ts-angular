@@ -5,8 +5,7 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import Autofocus = require('./Autofocus');
+import Autofocus from './Autofocus';
 
-export =[Autofocus];
+export default [Autofocus];

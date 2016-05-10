@@ -8,11 +8,11 @@
  *
  * ******************************************************************************************************
  */
-'use strict';
-import FeatureBase = require('../../fw/lib/FeatureBase');
-import Routes = require('./Routes');
-import TodosController = require('./controller/TodosController');
-import TodosService = require('./service/TodosService');
+
+import FeatureBase from '../../fw/lib/FeatureBase';
+import Routes from './Routes';
+import TodosController from './controller/TodosController';
+import TodosService from './service/TodosService';
 
 class Feature extends FeatureBase {
 
@@ -27,4 +27,4 @@ class Feature extends FeatureBase {
     }
 }
 
-export = Feature;
+export default Feature;

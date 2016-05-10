@@ -6,8 +6,8 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-import FeatureBase = require('./FeatureBase');
+
+import FeatureBase from './FeatureBase';
 
 class InitBase {
 
@@ -18,4 +18,4 @@ class InitBase {
     }
 }
 
-export = InitBase;
+export default InitBase;

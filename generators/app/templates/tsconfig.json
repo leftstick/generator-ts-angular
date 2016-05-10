@@ -11,7 +11,7 @@
   "compileOnSave": false,
   "exclude": [
     "img",
-    "less",
+    "css",
     "mock",
     "node_modules"
   ],

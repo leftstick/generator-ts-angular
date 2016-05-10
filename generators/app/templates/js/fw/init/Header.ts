@@ -6,10 +6,10 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-import InitBase = require('../lib/InitBase');
-import angular = require('angular');
-import __config = require('../../../etc/config');
+
+import InitBase from '../lib/InitBase';
+import * as angular from 'angular';
+import __config from '../../../etc/config';
 
 class Initializer extends InitBase {
 
@@ -48,4 +48,4 @@ class Initializer extends InitBase {
     }
 }
 
-export = Initializer;
+export default Initializer;

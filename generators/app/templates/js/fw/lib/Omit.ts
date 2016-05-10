@@ -6,9 +6,8 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import ng = require('angular');
+import * as ng from 'angular';
 
 var {isObject, isArray, isString} = ng;
 
@@ -45,4 +44,4 @@ var omit = function(obj: Object, keys: Array<string>): Object {
     return o;
 };
 
-export = omit;
+export default omit;

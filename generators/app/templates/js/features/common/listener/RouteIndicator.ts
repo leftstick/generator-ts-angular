@@ -8,9 +8,9 @@
  */
 'use strict';
 
-import ng = require('angular');
-import pluck = require('../../../fw/lib/Pluck');
-import FeatureBase = require('../../../fw/lib/FeatureBase');
+import * as ng from 'angular';
+import pluck from '../../../fw/lib/Pluck';
+import FeatureBase from '../../../fw/lib/FeatureBase';
 
 class Feature extends FeatureBase {
 
@@ -37,4 +37,4 @@ class Feature extends FeatureBase {
     }
 }
 
-export = Feature;
+export default Feature;

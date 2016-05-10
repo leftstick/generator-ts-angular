@@ -5,11 +5,10 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-
-import InternalService = require('../../../fw/service/InternalService');
-import TodosService = require('../service/TodosService');
-import Todo = require('../model/Todo');
+import * as angular from 'angular';
+import InternalService from '../../../fw/service/InternalService';
+import TodosService from '../service/TodosService';
+import Todo from '../model/Todo';
 
 class TodosController {
 
@@ -81,4 +80,4 @@ class TodosController {
     }
 }
 
-export = TodosController;
+export default TodosController;

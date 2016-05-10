@@ -8,7 +8,7 @@
  **/
 'use strict';
 
-export = {
+export default {
     'version': '1.0.0',
     'api': 'mock'
 };

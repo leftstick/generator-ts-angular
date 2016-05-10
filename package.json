@@ -1,6 +1,6 @@
 {
   "name": "generator-ts-angular",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Yeoman generator for AngularJS and written in TypeScript.",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/leftstick/generator-ts-angular#readme",
   "dependencies": {
     "date-util": "^1.2.1",
-    "lodash": "^4.6.1",
-    "yeoman-generator": "^0.22.5"
+    "lodash": "^4.12.0",
+    "yeoman-generator": "^0.23.3"
   }
 }

@@ -6,9 +6,8 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import FeatureBase = require('../../../fw/lib/FeatureBase');
+import FeatureBase from '../../../fw/lib/FeatureBase';
 
 class Autofocus extends FeatureBase {
 
@@ -30,4 +29,4 @@ class Autofocus extends FeatureBase {
     }
 }
 
-export = Autofocus;
+export default Autofocus;

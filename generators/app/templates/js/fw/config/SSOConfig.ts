@@ -5,8 +5,8 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-import ConfiguratorBase = require('../lib/ConfiguratorBase');
+
+import ConfiguratorBase from '../lib/ConfiguratorBase';
 
 class Configurator extends ConfiguratorBase {
     constructor(features, app) {
@@ -25,4 +25,4 @@ class Configurator extends ConfiguratorBase {
     }
 }
 
-export = Configurator;
+export default Configurator;

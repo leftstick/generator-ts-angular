@@ -5,13 +5,10 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-require('angular');
-require('angular-animate');
-require('angular-route');
+import 'angular';
+import 'angular-route';
 
-export =[
-    'ngAnimate',
+export default [
     'ngRoute'
 ];

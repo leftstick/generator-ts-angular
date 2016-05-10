@@ -5,8 +5,7 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import RouteIndicator = require('./RouteIndicator');
+import RouteIndicator from './RouteIndicator';
 
-export =[RouteIndicator];
+export default [RouteIndicator];

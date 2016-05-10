@@ -6,11 +6,10 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
 var tpl = (<string>require('./partials/todos.html'));
 
-export =[
+export default [
     {
         id: 'todos',
         isDefault: true,

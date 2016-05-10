@@ -7,9 +7,8 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import config = require('../../../etc/config');
+import config from '../../../etc/config';
 
 class InternalService {
 
@@ -45,4 +44,4 @@ class InternalService {
 
 }
 
-export = InternalService;
+export default InternalService;

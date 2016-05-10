@@ -5,10 +5,10 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import InternalService = require('../../../fw/service/InternalService');
-import Todo = require('../model/Todo');
+
+import InternalService from '../../../fw/service/InternalService';
+import Todo from '../model/Todo';
 
 class TodosService {
 
@@ -22,4 +22,4 @@ class TodosService {
 
 }
 
-export = TodosService;
+export default TodosService;

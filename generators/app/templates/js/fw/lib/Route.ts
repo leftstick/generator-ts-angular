@@ -6,6 +6,7 @@
  *  @date    <%= answers.date %>
  *
  */
+
 interface Route {
     id: string;
     isDefault: boolean;
@@ -15,4 +16,4 @@ interface Route {
     template: string;
 }
 
-export = Route;
+export default Route;

@@ -5,15 +5,15 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
+
 require.ensure(['splash-screen/splash.min.css', 'splash-screen'], function(require) {
     (<any>require('splash-screen/splash.min.css')).use();
     (<any>require('splash-screen')).enable('circular');
 });
 
-require.ensure(['../less/main.less', './main'], function(require) {
+require.ensure(['../css/main.css', './main'], function(require) {
 
-    require('../less/main.less');
+    (<any>require('../css/main.css')).use();
 
     var App = (<any>require('./main'));
     (new App()).run();

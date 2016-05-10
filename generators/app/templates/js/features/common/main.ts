@@ -5,9 +5,8 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import dirs = require('./directive/main');
-import listeners = require('./listener/main');
+import dirs from './directive/main';
+import listeners from './listener/main';
 
-export =[].concat(dirs).concat(listeners);
+export default [...dirs, ...listeners];

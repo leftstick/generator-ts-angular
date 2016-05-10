@@ -7,9 +7,9 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-import ServiceBase = require('../lib/ServiceBase');
-import InternalService = require('./InternalService');
+
+import ServiceBase from '../lib/ServiceBase';
+import InternalService from './InternalService';
 
 class Service extends ServiceBase {
     constructor(features, app) {
@@ -21,4 +21,4 @@ class Service extends ServiceBase {
     }
 }
 
-export = Service;
+export default Service;

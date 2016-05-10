@@ -11,7 +11,7 @@
  */
 'use strict';
 
-import header = require('./Header');
-import validator = require('./Validator');
+import header from './Header';
+import validator from './Validator';
 
-export =[header, validator];
+export default [header, validator];

@@ -1,7 +1,7 @@
-'use strict';
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -11,17 +11,13 @@ module.exports = {
         path: path.resolve(__dirname, 'build', 'js'),
         filename: '[hash].[name].bundle.js',
         chunkFilename: '[hash].[id].bundle.js',
-        publicPath: 'js/'
+        publicPath: '/'
     },
     module: {
         loaders: [
             {
                 test: /\.css$/,
                 loader: 'style/useable!css!postcss!'
-            },
-            {
-                test: /\.less$/,
-                loader: 'style!css!postcss!less!'
             },
             {
                 test: /\.ts$/,
@@ -59,6 +55,14 @@ module.exports = {
                 warnings: false
             }
         }),
-        new webpack.optimize.CommonsChunkPlugin('[hash].common.bundle.js')
+        new webpack.optimize.CommonsChunkPlugin('[hash].common.bundle.js'),
+        new HtmlWebpackPlugin({
+            pushState: <%= answers.pushState %>,
+            filename: 'index.html',
+            inject: 'body',
+            template: 'index.html_vm',
+            favicon: 'img/favicon.ico',
+            hash: false
+        })
     ]
 };

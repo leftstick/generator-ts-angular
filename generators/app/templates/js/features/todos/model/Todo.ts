@@ -5,11 +5,9 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-
 interface Todo {
     completed: boolean;
     title: string;
 }
 
-export = Todo;
+export default Todo;

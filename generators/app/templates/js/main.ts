@@ -5,16 +5,16 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
-import ng = require('angular');
-import Initializers = require('./fw/init/main');
-import Extensions = require('./fw/ext/main');
-import Configurators = require('./fw/config/main');
-import Services = require('./fw/service/main');
-import Features = require('./features/main');
-import Splash = require('splash-screen');
 
-import FeatureBase = require('./fw/lib/FeatureBase');
+import * as ng from 'angular';
+import Initializers from './fw/init/main';
+import Extensions from './fw/ext/main';
+import Configurators from './fw/config/main';
+import Services from './fw/service/main';
+import Features from './features/main';
+import Splash from 'splash-screen';
+
+import FeatureBase from './fw/lib/FeatureBase';
 
 class App {
 

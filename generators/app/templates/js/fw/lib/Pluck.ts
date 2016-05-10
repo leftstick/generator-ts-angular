@@ -5,9 +5,8 @@
  *  @date    <%= answers.date %>
  *
  */
-'use strict';
 
-import ng = require('angular');
+import * as ng from 'angular';
 
 var {isArray} = ng;
 
@@ -23,4 +22,4 @@ var pluck = function(arr: Array<Object>, key: string): Array<string> {
     });
 };
 
-export = pluck;
+export default pluck;
