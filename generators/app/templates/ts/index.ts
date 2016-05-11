@@ -6,9 +6,9 @@
  *
  */
 
-require.ensure(['splash-screen/splash.min.css', 'splash-screen'], function(require) {
-    (<any>require('splash-screen/splash.min.css')).use();
-    (<any>require('splash-screen')).enable('circular');
+require.ensure(['splash-screen/dist/splash.min.css', 'splash-screen'], function(require) {
+    (<any>require('splash-screen/dist/splash.min.css')).use();
+    (<any>require('splash-screen')).Splash.enable('circular');
 });
 
 require.ensure(['../css/main.css', './main'], function(require) {

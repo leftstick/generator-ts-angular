@@ -12,7 +12,7 @@ import Extensions from './fw/ext/main';
 import Configurators from './fw/config/main';
 import Services from './fw/service/main';
 import Features from './features/main';
-var Splash = <any>require('splash-screen');
+import {Splash} from 'splash-screen';
 
 import FeatureBase from './fw/lib/FeatureBase';
 
@@ -63,7 +63,7 @@ class App {
     destroySplash(): void {
         var _this = this;
         Splash.destroy();
-        (<any>require('splash-screen/splash.min.css')).unuse();
+        (<any>require('splash-screen/dist/splash.min.css')).unuse();
         setTimeout(function() {
             if (Splash.isRunning()) {
                 _this.destroySplash();

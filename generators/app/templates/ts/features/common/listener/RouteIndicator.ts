@@ -11,6 +11,7 @@
 import * as ng from 'angular';
 import pluck from '../../../fw/lib/Pluck';
 import FeatureBase from '../../../fw/lib/FeatureBase';
+import Route from '../../../fw/lib/Route';
 
 class Feature extends FeatureBase {
 
@@ -18,13 +19,13 @@ class Feature extends FeatureBase {
         super('RouteIndicatorModule');
     }
 
-    indicator($rootScope, Routes) {
+    _indicator($rootScope: angular.IRootScopeService, Routes: Route[]) {
         'ngInject';
 
         var $body = ng.element(document.body);
         var classes = pluck(Routes, 'id').join(' ');
 
-        $rootScope.$on('$routeChangeSuccess', function(e, route) {
+        $rootScope.$on('$routeChangeSuccess', function(e: ng.IAngularEvent, route: any) {
             $body.removeClass(classes);
             if (route && route.$$route && route.$$route.id) {
                 $body.addClass(route.$$route.id);
@@ -33,7 +34,7 @@ class Feature extends FeatureBase {
     }
 
     execute() {
-        this.run(this.indicator);
+        this.run(this._indicator);
     }
 }
 

@@ -5,10 +5,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './js/index.ts'
+        index: './ts/index.ts'
     },
     output: {
-        path: path.resolve(__dirname, 'build', 'js'),
+        path: path.resolve(__dirname, 'build'),
         filename: '[hash].[name].bundle.js',
         chunkFilename: '[hash].[id].bundle.js',
         publicPath: '/'

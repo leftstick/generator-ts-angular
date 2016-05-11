@@ -102,7 +102,7 @@ var gen = generators.Base.extend({
         self.fs.copy(self.templatePath('etc/config.ts'), self.destinationPath('etc/config.ts'));
         self.fs.copy(self.templatePath('tsconfig.json'), self.destinationPath('tsconfig.json'));
         self.directory(self.templatePath('img'), self.destinationPath('img'));
-        self.directory(self.templatePath('js'), self.destinationPath('js'), function(body) {
+        self.directory(self.templatePath('ts'), self.destinationPath('ts'), function(body) {
             return _.template(body, {
                 interpolate: /<%=([\s\S]+?)%>/g
             })(self.obj);

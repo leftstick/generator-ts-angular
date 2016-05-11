@@ -6,8 +6,8 @@
 ![][dt-url]
 ![][license-url]
 
-Yeoman generator for AngularJS and written in TypeScript.
-> [gulp](http://gulpjs.com/) and [webpack](http://webpack.github.io/) was chosen as default development toolchain.
+Yeoman generator for TypeScript based AngularJS project skeleton.
+>[webpack](http://webpack.github.io/) was chosen as default bundle tool, and `npm scripts` is used for providing easy use/less dependency building tools
 
 
 > You can view the online demo at: [http://leftstick.github.io/generator-ts-angular](http://leftstick.github.io/generator-ts-angular)
@@ -15,7 +15,6 @@ Yeoman generator for AngularJS and written in TypeScript.
 ## Prerequisites ##
 
 1. Install [yeoman](http://yeoman.io/): `npm install -g yo`
-2. Install [gulp](http://gulpjs.com/): `npm install -g gulp`
 4. Install __this__: `npm install -g generator-ts-angular`
 
 > prepend with `sudo` if you are running on `*nix` OS.
@@ -30,15 +29,37 @@ Yeoman generator for AngularJS and written in TypeScript.
 
 And then, the [TypeScript](http://www.typescriptlang.org) based project generated.
 
-## Debug your app ##
+## Quick start ##
 
-The full featured `gulp` and `webpack` are embedded, it's easy to start debugging your app.
+### Debug your app ###
+
+The full featured `dev/dist` tools are provided, it's easy to start debugging your app.
 
 Just move into the created directory with the given `project name`.
 
-Run `gulp dev` to start a debug web server for current working directory.
+Run `npm start` to start a debug web server for the project.
 
-Open [http://localhost:8080/webpack-dev-server/index.html](http://localhost:8080/webpack-dev-server/index.html), and have fun.
+Open [http://localhost:8080/](http://localhost:8080/) to see the playable skeleton, and have fun.
+
+
+### Release your app ###
+
+Move the root of the created project.
+
+Run `npm run release` to compile all the source code into webpack bundles. And all required resources are generated into `{root}/build/`.
+
+You can copy the `build` folder to anywhere you like, it's the released app.
+
+#### Like have a try with the released app? ####
+
+Install [sero-cli](https://github.com/leftstick/Sero-cli): `npm install -g sero-cli`
+
+Move into `{root}/build/`
+
+Run `sero server -p 8080 -h`, a static web server launched at port 8080.
+
+Open [http://localhost:8080](http://localhost:8080) to watch the released version.
+
 
 **I would strongly suggest that you use [atom](https://atom.io/) with [atom-typescript](https://atom.io/packages/atom-typescript) plugin to modify the codes. That's really fantastic experience.**
 
@@ -51,45 +72,10 @@ Open [http://localhost:8080/webpack-dev-server/index.html](http://localhost:8080
 #### Generics ####
 ![](./docs/img/ide-hint03.png)
 
-## Release your app ##
 
-Move the root of the created project.
+## More read ##
 
-Run `gulp release` to compile all the source code into webpack bundles. And all required resources are generated into `{root}/build/`.
-
-You can copy the `build` folder to anywhere you like, it's the released app.
-
-### Like have a try with the released app? ###
-
-Install [sero-cli](https://github.com/leftstick/Sero-cli): `npm install -g sero-cli`
-
-Move into `{root}/build/`
-
-Run `sero server -r . -p 8080`, a static web server launched at port 8080.
-
-Open [http://localhost:8080](http://localhost:8080) to watch the released version.
-
-
-## note ##
-
-If you'd like to add [jquery](http://jquery.com/) as replacement of `jqLite`, you have to modify the `webpack.config.dev.js` and `webpack.config.prod.js` with following plugin added:
-
-```javascript
-new webpack.ProvidePlugin({
-    $: 'jquery',
-    'window.jQuery': 'jquery'
-}),
-```
-
-## References ##
-
-1. [yeoman](http://yeoman.io/)
-2. [gulp](http://gulpjs.com/)
-3. [tsd](http://definitelytyped.org/tsd/)
-4. [webpack](http://webpack.github.io/)
-5. [TypeScript](http://www.typescriptlang.org)
-6. [angular](https://angularjs.org/)
-7. [ng-annotate](https://github.com/olov/ng-annotate)
+Looking for detail? Check it [here](https://github.com/leftstick/generator-ts-angular/blob/master/docs/api.md)
 
 
 ## LICENSE ##

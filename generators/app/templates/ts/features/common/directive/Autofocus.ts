@@ -15,17 +15,17 @@ class Autofocus extends FeatureBase {
         super('AutofocusModule');
     }
 
-    autoFocus() {
+    _autoFocus() {
         return {
             restrict: 'A',
-            link: function($scope, element) {
+            link: function($scope: angular.IScope, element: angular.IAugmentedJQuery) {
                 element[0].focus();
             }
         };
     }
 
     execute() {
-        this.directive('autofocus', this.autoFocus);
+        this.directive('autofocus', this._autoFocus);
     }
 }
 
