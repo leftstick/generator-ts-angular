@@ -10,10 +10,14 @@ import InternalService from '../../../fw/service/InternalService';
 import TodosService from '../service/TodosService';
 import Todo from '../model/Todo';
 
+interface IStatusFilter {
+    completed?: boolean
+}
+
 class TodosController {
 
     todolist: Array<Todo> = [];
-    statusFilter: Object = {};
+    statusFilter: IStatusFilter = {};
     remainingCount: number = 0;
     filter: string = '';
     editedTodo: Todo;
@@ -65,7 +69,7 @@ class TodosController {
         this.todolist.forEach(todo => todo.completed = checked);
     }
 
-    toggleFilter(e, filter) {
+    toggleFilter(e: MouseEvent, filter: string) {
         this.utils.stopEvent(e);
         this.filter = filter;
         this.statusFilter = !filter ? {} : filter === 'active' ? { completed: false } : { completed: true };
