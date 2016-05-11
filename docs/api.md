@@ -1,3 +1,11 @@
+## What does `Use html5 mode` mean while generating ##
+
+```bash
+npm install --save <external library>
+```
+
+Open `ts/fw/ext/main.ts`, `import` it, and append the module name to `export` array if provided.
+
 ## How to involve external library ##
 
 ```bash
