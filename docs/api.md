@@ -1,10 +1,24 @@
 ## What does `Use html5 mode` mean while generating ##
 
-```bash
-npm install --save <external library>
+Well, once you choose `Yes` for `Use html5 mode`, I am going to use:
+
+```javascript
+$locationProvider.html5Mode({
+    enabled: true,
+    requireBase: true
+});
 ```
 
-Open `ts/fw/ext/main.ts`, `import` it, and append the module name to `export` array if provided.
+in `ts/fw/config/RouterConfig.ts` for the application. Otherwise, i am going to use:
+
+```javascript
+$locationProvider.html5Mode(false);
+```
+
+In case you may have no idea what this `html5Mode` method is, let me explain in short, once `html5Mode(false)` the frontend route is parsed with `#/` in URL, and without `#/` in URL if `$locationProvider.html5Mode({ enabled: true, requireBase: true });`.
+
+For more information: "Hashbang and HTML5 Modes" chapter at [read more](https://docs.angularjs.org/guide/$location)
+
 
 ## How to involve external library ##
 
