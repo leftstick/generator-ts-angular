@@ -15,6 +15,6 @@ require.ensure(['../css/main.css', './main'], function(require) {
 
     (<any>require('../css/main.css')).use();
 
-    var App = (<any>require('./main'));
+    var App = (<any>require('./main')).default;
     (new App()).run();
 });

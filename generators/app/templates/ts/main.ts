@@ -24,7 +24,7 @@ class App {
     app: angular.IModule;
 
     constructor() {
-        this.appName = 'tss';
+        this.appName = '<%= answers.name %>';
         Features.forEach(function(Feature) {
             this.push(new Feature());
         }, this.features = []);
@@ -86,4 +86,4 @@ class App {
     }
 }
 
-export = App;
+export default App;
