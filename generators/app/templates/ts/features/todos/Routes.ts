@@ -9,13 +9,15 @@
 
 var tpl = (<string>require('./partials/todos.html'));
 
-export default [
-    {
-        id: 'todos',
-        isDefault: true,
-        when: '/todos',
-        controller: 'TodosController',
-        controllerAs: 'todos',
-        template: tpl
-    }
-];
+import Route from '../../fw/lib/Route';
+
+const routes: Route[] = [{
+    id: 'todos',
+    isDefault: true,
+    when: '/todos',
+    controller: 'TodosController',
+    controllerAs: 'todos',
+    template: tpl
+}];
+
+export default routes;
