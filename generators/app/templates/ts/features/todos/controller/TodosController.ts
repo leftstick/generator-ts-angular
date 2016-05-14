@@ -14,6 +14,10 @@ interface IStatusFilter {
     completed?: boolean
 }
 
+interface ITodosScope extends angular.IScope {
+    todolist?: Array<Todo>;
+}
+
 class TodosController {
 
     todolist: Array<Todo> = [];
@@ -24,13 +28,13 @@ class TodosController {
     newTodo: string = '';
 
     /*@ngInject*/
-    constructor(public $scope: angular.IScope, public TodosService: TodosService, public utils: InternalService) {
+    constructor(public $scope: ITodosScope, public TodosService: TodosService, public utils: InternalService) {
         this._init_();
         this._destroy_();
     }
 
     _init_() {
-        this.$scope['todolist'] = this.todolist;
+        this.$scope.todolist = this.todolist;
         this.TodosService
             .getInitTodos()
             .then(data => this.todolist.push(...data));
@@ -43,6 +47,9 @@ class TodosController {
     }
 
     addTodo() {
+        if (!this.newTodo) {
+            return;
+        }
         this.todolist.push({
             title: this.newTodo,
             completed: false
@@ -62,7 +69,7 @@ class TodosController {
     }
 
     removeTodo(todo: Todo) {
-        this.$scope['todolist'] = this.todolist = this.todolist.filter((t) => t !== todo);
+        this.$scope.todolist = this.todolist = this.todolist.filter((t) => t !== todo);
     }
 
     markAll(checked: boolean) {
@@ -76,7 +83,7 @@ class TodosController {
     }
 
     clearDoneTodos() {
-        this.$scope['todolist'] = this.todolist = this.todolist.filter((todo) => !todo.completed);
+        this.$scope.todolist = this.todolist = this.todolist.filter((todo) => !todo.completed);
     }
 
     _destroy_() {
