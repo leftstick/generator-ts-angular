@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        
-    <link rel="shortcut icon" href="/generator-ts-angular/favicon.ico"></head>
-    <body>
 
-        <div ng-view autoscroll="true"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
-    <script src="/generator-ts-angular/7ebc54fe062ff8d2897b.common.bundle.js"></script><script src="/generator-ts-angular/7ebc54fe062ff8d2897b.index.bundle.js"></script></body>
+    <title>ts-angular</title>
+    <style>
+        html, body, h1 {
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+    </style>
+    <style id="style-spinner">
+        .el-spinner {width: 40px;height: 40px;position: fixed;left: 50%;margin-left: -20px;top: 40%;}
+
+        .double-bounce1, .double-bounce2 {width: 100%;height: 100%;border-radius: 50%;background-color: #333;opacity: 0.6;position: absolute;top: 0;left: 0;-webkit-animation: sk-bounce 2.0s infinite ease-in-out;animation: sk-bounce 2.0s infinite ease-in-out;}
+
+        .double-bounce2 {-webkit-animation-delay: -1.0s;animation-delay: -1.0s;}
+
+        @-webkit-keyframes sk-bounce {0%, 100% { -webkit-transform: scale(0.0) }50% { -webkit-transform: scale(1.0) }}
+
+        @keyframes sk-bounce {0%, 100% {transform: scale(0.0);-webkit-transform: scale(0.0);} 50% {transform: scale(1.0);-webkit-transform: scale(1.0);}}
+    </style>
+<link rel="shortcut icon" href="/generator-ts-angular/favicon.ico"></head>
+
+<body>
+    <application></application>
+    <div class="el-spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+<script type="text/javascript" src="/generator-ts-angular/externals.a5b87dd68ba7e4f7de94.bundle.js"></script><script type="text/javascript" src="/generator-ts-angular/app.a5b87dd68ba7e4f7de94.bundle.js"></script></body>
+
 </html>
