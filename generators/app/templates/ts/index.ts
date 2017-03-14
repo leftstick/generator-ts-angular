@@ -1,20 +1,53 @@
-/**
- *  index.js launch the application.
- *
- *  @author  <%= answers.username %>
- *  @date    <%= answers.date %>
- *
- */
+import * as angular from 'angular';
 
-require.ensure(['splash-screen/dist/splash.min.css', 'splash-screen'], function(require) {
-    (<any>require('splash-screen/dist/splash.min.css')).use();
-    (<any>require('splash-screen')).Splash.enable('circular');
-});
+import { registerFeature, registerCommon } from './core/helper/ngDeclare';
 
-require.ensure(['../css/main.css', './main'], function(require) {
+import Dependencies from './core/externals';
+import Configurations from './core/configurations';
 
-    (<any>require('../css/main.css')).use();
+import { commons } from './features/common';
+import Features from './features';
 
-    var App = (<any>require('./main')).default;
-    (new App()).run();
-});
+import { application } from './application';
+
+class Application {
+
+    appName: string = '<%= answers.name %>';
+    app: angular.IModule;
+    depends: string[];
+
+    constructor() {
+        this.depends = [...Dependencies, ...Features.map(feature => (registerFeature(feature), feature.name))];
+
+    }
+
+    createApp() {
+        this.app = angular.module(this.appName, this.depends);
+        registerCommon(this.app, commons);
+        this.app.component('application', application);
+    }
+
+    configApp() {
+        Configurations.forEach(c => {
+            this.app.config(c);
+        });
+    }
+
+    destroySplash() {
+        document.head.removeChild(document.querySelector('#style-spinner'));
+        document.body.removeChild(document.querySelector('.el-spinner'));
+    }
+
+    launch() {
+        angular.bootstrap(document, [this.appName]);
+    }
+
+    run() {
+        this.createApp();
+        this.configApp();
+        this.destroySplash();
+        this.launch();
+    }
+}
+
+new Application().run();

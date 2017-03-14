@@ -46,31 +46,31 @@ Open [http://localhost:8080/](http://localhost:8080/) to see the playable skelet
 
 Move the root of the created project.
 
-Run `npm run release` to compile all the source code into webpack bundles. And all required resources are generated into `{root}/build/`.
+Run `npm run dist` to compile all the source code into webpack bundles. And all required resources are generated into `{root}/dist/`.
 
-You can copy the `build` folder to anywhere you like, it's the released app.
+You can copy the `dist` folder to anywhere you like, it's the released app.
 
 #### Like have a try with the released app? ####
 
 Install [sero-cli](https://github.com/leftstick/Sero-cli): `npm install -g sero-cli`
 
-Move into `{root}/build/`
+Move into `{root}/dist/`
 
 Run `sero server -p 8080 -h`, a static web server launched at port 8080.
 
 Open [http://localhost:8080](http://localhost:8080) to watch the released version.
 
 
-**I would strongly suggest that you use [atom](https://atom.io/) with [atom-typescript](https://atom.io/packages/atom-typescript) plugin to modify the codes. That's really fantastic experience.**
+**I would strongly suggest that you use [vscode](https://code.visualstudio.com/) as your working IDE. That's really fantastic experience.**
 
 #### Autocomplete ####
-![](./docs/img/ide-hint01.png)
+![](./docs/img/ide-hint01.gif)
 
 #### Live error analysis ####
-![](./docs/img/ide-hint02.png)
+![](./docs/img/ide-hint02.gif)
 
 #### Generics ####
-![](./docs/img/ide-hint03.png)
+![](./docs/img/ide-hint03.gif)
 
 
 ## More read ##
