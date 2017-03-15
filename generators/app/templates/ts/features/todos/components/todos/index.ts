@@ -7,7 +7,7 @@ export const TodosComponent: angular.IComponentOptions = {
     template: `
         <todo-title></todo-title>
         <div class="${S['todo-content']}">
-            <add-todo on-add="$ctrl.onAddTodo(todo)"></add-todo>
+            <add-todo on-add="$ctrl.onAddTodo(todo)" list="$ctrl.todoList" on-toggle-all="$ctrl.onToggle(completed)"></add-todo>
             <todo-list ng-if="$ctrl.todoList" list="$ctrl.todoList" filter="$ctrl.statusFilter" on-remove="$ctrl.onRemoveTodo(todo)" on-edit="$ctrl.onEditTodo(todo, newValue)"></todo-list>
             <todo-status ng-if="$ctrl.todoList.length" list="$ctrl.todoList" on-filter-changed="$ctrl.onFilterChanged(filter)" on-clean-completed="$ctrl.onCleanCompleted()"></todo-status>
         </div>
@@ -56,6 +56,10 @@ export const TodosComponent: angular.IComponentOptions = {
 
         onCleanCompleted() {
             this.todoList = this.todoList.filter(t => !t.completed);
+        }
+
+        onToggle(completed: boolean) {
+            this.todoList = this.todoList.map(t => ({ title: t.title, completed }));
         }
     }
 };

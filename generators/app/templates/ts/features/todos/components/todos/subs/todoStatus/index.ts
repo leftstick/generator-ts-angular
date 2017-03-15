@@ -30,8 +30,8 @@ export const TodoStatusComponent: angular.IComponentOptions = {
     },
     controller: class implements angular.IController {
         list: ITodo[];
-        onFilterChanged: Function;
-        onCleanCompleted: Function;
+        onFilterChanged: { (filter: { filter: string; }): void; };
+        onCleanCompleted: { (): void; };
 
         filter: string = '';
         remainingCount: number;
@@ -39,8 +39,8 @@ export const TodoStatusComponent: angular.IComponentOptions = {
         /*@ngInject*/
         constructor(private EventUtil: EventUtil) { }
 
-        $onChanges(changes: { [key: string]: angular.IChangesObject<Array<ITodo>> }) {
-            this.remainingCount = changes.list.currentValue.reduce((p, c) => p + (c.completed ? 0 : 1), 0);
+        $onChanges(changes: { list: angular.IChangesObject<Array<ITodo>> }) {
+            this.remainingCount = changes.list.currentValue.reduce((p, c) => p + (+!c.completed), 0);
         }
 
         toggleFilter(e: MouseEvent, filter: string) {
